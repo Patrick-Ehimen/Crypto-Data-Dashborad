@@ -37,7 +37,7 @@ export function getMenuList(pathname: string): Group[] {
       menus: [
         {
           href: "/dashboard", // Menu item for Dashboard
-          label: "Dashboard", // Label for the menu item
+          label: "Wallet Dashboard", // Label for the menu item
           active: pathname.includes("/dashboard"), // Check if the current path includes "/dashboard"
           icon: LayoutDashboard, // Icon for the Dashboard menu item
           submenus: [], // No submenus for Dashboard
@@ -54,17 +54,18 @@ export function getMenuList(pathname: string): Group[] {
           icon: CircleDollarSign, // Icon for Categories menu
           submenus: [
             {
-              href: "/markets", // Submenu item for all trending
-              label: "Coins", // Label for Trending submenu
-              active: pathname === "/markets", // Check if the current path is exactly "/markets"
-              icon: List,
-            },
-            {
               href: "/markets/overview", // Submenu item for overview post
               label: "Overview", // Label for overview markets submenu
               active: pathname === "/markets/overview", // Check if the current path is exactly "/markets/overview"
               icon: List,
             },
+            {
+              href: "/markets", // Submenu item for all trending
+              label: "Coins", // Label for Trending submenu
+              active: pathname === "/markets", // Check if the current path is exactly "/markets"
+              icon: List,
+            },
+
             {
               href: "/markets/nft", // Submenu item for nft post
               label: "NFT", // Label for nft markets submenu

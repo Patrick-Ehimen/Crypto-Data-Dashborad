@@ -1,7 +1,6 @@
 import Link from "next/link";
 
-// import OverviewContent from "@/components/page-contents/overview-content";
-import PlaceholderContent from "@/components/page-contents/placeholder-content";
+import OverviewContent from "@/components/page-contents/overview-content";
 import { ContentLayout } from "@/components/sidebar-panel/content-layout";
 import {
   Breadcrumb,
@@ -40,8 +39,7 @@ export default function Overview() {
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
-      {/* <OverviewContent /> */}
-      <PlaceholderContent />
+      <OverviewContent />
     </ContentLayout>
   );
 }
