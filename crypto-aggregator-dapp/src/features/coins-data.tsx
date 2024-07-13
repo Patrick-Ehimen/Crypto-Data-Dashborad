@@ -51,7 +51,7 @@ export default async function CoinsData() {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {data.map((coinData, index) => (
+          {data.map((coinData: any, index: number) => (
             <TableRow key={coinData.coinData}>
               <TableCell className="umber">{index + 1}</TableCell>
               <TableCell className="">
