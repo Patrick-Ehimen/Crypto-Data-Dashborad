@@ -5,6 +5,7 @@ import { ArrowRightIcon, GitHubLogoIcon } from "@radix-ui/react-icons";
 
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
+// import MobileThemeToggle from "@/components/mobile-theme-toggle";
 
 export default function HomePage() {
   return (
@@ -39,6 +40,7 @@ export default function HomePage() {
               </Link>
             </Button>
             <ThemeToggle />
+            {/* <MobileThemeToggle /> */}
           </nav>
         </div>
       </header>

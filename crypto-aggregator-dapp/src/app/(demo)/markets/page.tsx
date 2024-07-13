@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-// import CoinsContent from "@/components/page-contents/coins-content";
+import CoinsMarket from "@/components/page-contents/coins-market";
 import PlaceholderContent from "@/components/page-contents/placeholder-content";
 import { ContentLayout } from "@/components/sidebar-panel/content-layout";
 import {
@@ -34,7 +34,7 @@ export default function MarketPage() {
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
-      {/* <CoinsContent /> */}
+      <CoinsMarket />
       <PlaceholderContent />
     </ContentLayout>
   );

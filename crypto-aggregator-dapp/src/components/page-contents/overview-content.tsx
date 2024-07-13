@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { MarketOverviewBentoGrid } from "@/features/market-overview-bento-grid";
+import { MarketOverviewBentoGrid } from "@/features/crypto-data-overview/market-overview-bento-grid";
 
 export default async function OverviewContent() {
   return (
