@@ -16,18 +16,6 @@ import { millifyConfig, priceChangePercentageMillifyConfig } from "@/config";
 
 import millify from "millify";
 
-// const millifyConfig = {
-//   precision: 8, // Adjust this number based on how many decimal places i want to keep
-// };
-
-// const priceChangePercentageMillifyConfig = {
-//   precision: 2,
-// };
-
-// const priceChangeMillifyConfig = {
-//   precision: 5,
-// };
-
 export default async function CoinsData() {
   try {
     const res = await fetch(
