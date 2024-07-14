@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Crypto Aggregator DApp
 
-## Getting Started
+This project is a web3 data aggregator Decentralized Application (DApp) built using Next.js and React. It provides users with a user-friendly and modern UI for aggregating web3 data. The DApp is designed to be responsive on both desktop and mobile devices.
 
-First, run the development server:
+### Getting Started
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Clone the repository:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+   ```bash
+   git clone https://github.com/Patrick-Ehimen/Crypto-Data-Dashborad.git
+   ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2. Install dependencies:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+   ```bash
+   bun install
+   ```
 
-## Learn More
+3. Run the development server:
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   bun run dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Features
 
-## Deploy on Vercel
+- Aggregates data from coin-gecko api.
+- Provides a clean and intuitive user interface.
+- Supports responsive design for mobile and desktop.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Technologies Used
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Next.js
+- React
+- Tailwind CSS
+- TypeScript
+- Millify
+- Framer Motion
+
+### Folder Structure
+
+- `src/`: Contains the main source code for the application.
+- `public/`: Includes static assets like images and SVG icons.
+- `components/`: Reusable UI components used throughout the application.
+- `features/`: Contains specific features like coins data and details components.
+- `app/`: Includes layout components and global styles.
+
+### Deployment
+
+The DApp has been deployed using Vercel. Here is the link to the Dapp[Crypto Aggregator DApp](crypto-port-radar.vercel.app).
+
+### Feedback
+
+Your feedback and contributions are welcome! Feel free to open issues or submit pull requests to help improve this project.
+
+### License
+
+This project is licensed under the MIT License.
