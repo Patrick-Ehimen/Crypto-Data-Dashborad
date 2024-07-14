@@ -1,3 +1,4 @@
+import { ChartConfig } from "@/components/ui/chart";
 const { millify } = require("millify");
 
 export const millifyConfig = {
@@ -11,3 +12,17 @@ export const priceChangePercentageMillifyConfig = {
 export const priceChangeMillifyConfig = {
   precision: 5,
 };
+
+export const chartConfig = {
+  views: {
+    label: "Page Views",
+  },
+  usd: {
+    label: "$USD",
+    color: "hsl(var(--chart-1))",
+  },
+  btc: {
+    label: "$BTC",
+    color: "hsl(var(--chart-2))",
+  },
+} satisfies ChartConfig;
