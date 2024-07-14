@@ -6,6 +6,7 @@ import { ArrowRightIcon, GitHubLogoIcon } from "@radix-ui/react-icons";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
 // import MobileThemeToggle from "@/components/mobile-theme-toggle";
+import { Img1, Img2, Img3, Img4 } from "../../public/assets";
 
 export default function HomePage() {
   return (
@@ -75,7 +76,7 @@ export default function HomePage() {
           </section>
           <div className="w-full flex justify-center relative">
             <Image
-              src="/demo-light-min.png"
+              src={Img3}
               width={1080}
               height={608}
               alt="demo"
@@ -83,7 +84,7 @@ export default function HomePage() {
               className="border rounded-xl shadow-sm dark:hidden"
             />
             <Image
-              src="/demo-dark-min.png"
+              src={Img1}
               width={1080}
               height={608}
               alt="demo-dark"
@@ -91,14 +92,14 @@ export default function HomePage() {
               className="border border-zinc-600 rounded-xl shadow-sm hidden dark:block dark:shadow-gray-500/5"
             />
             <Image
-              src="/demo-mobile-light-min.png"
+              src={Img4}
               width={228}
               height={494}
               alt="demo-mobile"
               className="border rounded-xl absolute bottom-0 right-0 hidden lg:block dark:hidden"
             />
             <Image
-              src="/demo-mobile-dark-min.png"
+              src={Img2}
               width={228}
               height={494}
               alt="demo-mobile"
@@ -108,27 +109,32 @@ export default function HomePage() {
         </div>
       </main>
       <footer className="py-6 md:py-0 border-t border-border/40">
-        <div className="container flex flex-col items-center justify-center gap-4 md:h-24 md:flex-row">
-          <p className="text-balance text-center text-sm leading-loose text-muted-foreground">
-            Built with{" "}
-            <Link
-              href=""
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium underline underline-offset-4"
-            >
-              Next.js + Typescript
-            </Link>
-            . The source code is available on{" "}
-            <Link
-              href="https://github.com/Patrick-Ehimen/Crypto-Data-Dashborad"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium underline underline-offset-4"
-            >
-              GitHub
-            </Link>
-            .
+        <div className="">
+          <div className="container flex flex-col items-center justify-center gap-4 md:h-24 md:flex-row">
+            <p className="text-balance text-center text-sm leading-loose text-muted-foreground">
+              Built with{" "}
+              <Link
+                href=""
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium underline underline-offset-4"
+              >
+                Next.js + Typescript
+              </Link>
+              . The source code is available on{" "}
+              <Link
+                href="https://github.com/Patrick-Ehimen/Crypto-Data-Dashborad"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium underline underline-offset-4"
+              >
+                GitHub
+              </Link>
+              .
+            </p>
+          </div>
+          <p className="text-balance text-center md:-mt-5 mb-5 text-sm leading-loose text-muted-foreground">
+            This Dapp is still under development
           </p>
         </div>
       </footer>

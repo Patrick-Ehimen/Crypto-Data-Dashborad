@@ -3,7 +3,7 @@ import { SheetMenu } from "@/components/sidebar-panel/sheet-menu";
 import SelectNetwork from "../app-navbar/select-network";
 import MenuToolkit from "../app-navbar/menu-toolkit";
 
-// import WalletConnect from "../connect-wallets/wallet-connect";
+import WalletConnect from "../connect-wallets/wallet-connect";
 
 interface NavbarProps {
   title: string;
@@ -23,7 +23,7 @@ export function Navbar({ title }: NavbarProps) {
         <div className="flex flex-1 items-center space-x-2 justify-end">
           <ThemeToggle />
           <SelectNetwork />
-          {/* <WalletConnect /> */}
+          <WalletConnect />
         </div>
       </div>
     </header>

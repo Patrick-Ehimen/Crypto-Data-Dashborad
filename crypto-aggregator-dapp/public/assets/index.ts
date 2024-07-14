@@ -25,6 +25,11 @@ import Squre1 from "./icons/square1.svg";
 import Squre2 from "./icons/square2.svg";
 import Squre3 from "./icons/square3.svg";
 import Squre4 from "./icons/square4.svg";
+import Img1 from "./screenshots/1.png";
+import Img2 from "./screenshots/2.png";
+import Img3 from "./screenshots/3.png";
+import Img4 from "./screenshots/4.png";
+import placeholder from "../homeImg.svg";
 
 export {
   Arbitrum,
@@ -54,4 +59,9 @@ export {
   Squre2,
   Squre3,
   Squre4,
+  Img1,
+  Img2,
+  Img3,
+  Img4,
+  placeholder,
 };

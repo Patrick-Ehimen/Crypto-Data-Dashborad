@@ -12,15 +12,14 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+
 import { Slider } from "@nextui-org/slider";
 
 import { millifyConfig, priceChangePercentageMillifyConfig } from "@/config";
 
 import millify from "millify";
 
-// Assuming CoinDetails is a component you've created to display coin details
-import CoinsDetails from "./coins-data/coins-details"; // Adjust the import path according to your project structure
-
+import CoinsDetails from "./coins-data/coins-details";
 export default function CoinsData() {
   const [data, setData] = useState([]);
   const [selectedCoinId, setSelectedCoinId] = useState(null);
@@ -57,7 +56,7 @@ export default function CoinsData() {
     <>
       {!selectedCoinId ? (
         <Table>
-          <TableCaption>A list of your recent invoices.</TableCaption>
+          <TableCaption>A list of Cryptocurrencies prices.</TableCaption>
           <TableHeader>
             <TableRow>
               <TableHead className="w-[10px]">#</TableHead>
@@ -66,7 +65,7 @@ export default function CoinsData() {
               <TableHead>Market Cap</TableHead>
               <TableHead>24h%</TableHead>
               <TableHead className="w-[50px]">Circulting Supply (%)</TableHead>
-              <TableHead className="">Amount</TableHead>
+              <TableHead className="">All Time High</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -124,7 +123,9 @@ export default function CoinsData() {
                     className="max-w-md"
                   />
                 </TableCell>
-                <TableCell className="">{coinData.ath}</TableCell>
+                <TableCell className="">
+                  {millify(coinData.ath, millifyConfig)}
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
@@ -135,7 +136,3 @@ export default function CoinsData() {
     </>
   );
 }
-
-// edit the code so that when any of the data index is clicked, the coinData.id is stored and passed to a new component that is then rendered
-
-// write the Coindetail component and fetch the data from this API-https://api.coingecko.com/api/v3/coins/solana?tickers=true&market_data=true&sparkline=true

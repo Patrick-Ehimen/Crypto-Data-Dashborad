@@ -2,9 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { placeholder } from "../../../public/assets";
+import { placeholder } from "../../public/assets";
 
-export default function PlaceholderContent() {
+export default function LoadingContent() {
   return (
     <Card className="rounded-lg border-none mt-6">
       <CardContent className="p-6">
@@ -19,6 +19,7 @@ export default function PlaceholderContent() {
             />
           </div>
         </div>
+        <h1 className="font-bold text-[30px]">Loading Please Wait</h1>
       </CardContent>
     </Card>
   );

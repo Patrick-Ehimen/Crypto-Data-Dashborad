@@ -5,7 +5,8 @@ import MockBarChart from "../charts/mock-bar-chart";
 import millify from "millify";
 import { millifyConfig } from "@/config";
 import Link from "next/link";
-import { SquareArrowOutUpRight } from "lucide-react";
+import { SquareArrowOutUpRight, Book, Telescope } from "lucide-react";
+import LoadingContent from "@/app/loading";
 
 interface CoinDetailsProps {
   id: string;
@@ -17,7 +18,6 @@ const CoinsDetails: React.FC<CoinDetailsProps> = ({ id }) => {
   useEffect(() => {
     const fetchCoinDetails = async () => {
       try {
-        // Replace 'solana' with the dynamic coin ID when applicable
         const url = `https://api.coingecko.com/api/v3/coins/${id}?tickers=true&market_data=true&sparkline=true`;
         const response = await fetch(url, {
           method: "GET",
@@ -42,7 +42,11 @@ const CoinsDetails: React.FC<CoinDetailsProps> = ({ id }) => {
   }, [id]); // Re-fetch data if the id prop changes
 
   if (!coinData) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <LoadingContent />
+      </div>
+    );
   }
 
   return (
@@ -76,12 +80,16 @@ const CoinsDetails: React.FC<CoinDetailsProps> = ({ id }) => {
           </div>
           <div className="flex">
             <div className="flex flex-col">
-              <h2 className="font-medium text-[18px]">
+              <h2 className="font-medium text-[18px] hidden md:flex">
                 {coinData.name} Price ({coinData.symbol})
               </h2>
-              <div className="flex gap-2">
+              <div className="flex gap-2 mt-2 md:mt-0">
                 <h2 className="text-[#0CAF60] text-[24px] font-bold">
-                  ${millify(coinData.market_data.current_price.usd)}
+                  $
+                  {millify(
+                    coinData.market_data.current_price.usd,
+                    millifyConfig
+                  )}
                 </h2>
                 <p className="text-slate-500 mt-1 font-bold">
                   (
@@ -97,17 +105,17 @@ const CoinsDetails: React.FC<CoinDetailsProps> = ({ id }) => {
         </div>
         <div className="my-10">
           <h1 className="font-bold text-[24px]">About {coinData.name}</h1>
-          <h2>{coinData.description.en}</h2>
+          <h2 className="">{coinData.description.en}</h2>
         </div>
 
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid  gap-20">
           <div className="flex flex-col">
             <div className="gap-2 flex">
               <span className="text-slate-400 mr-2">Website</span>
               <div className="flex gap-1">
                 <Link href={coinData.links.homepage[0]} className="flex gap-1">
                   {coinData.links.homepage[0]}
-                  <SquareArrowOutUpRight />
+                  <SquareArrowOutUpRight size={16} strokeWidth={0.5} />
                 </Link>
               </div>
             </div>
@@ -116,19 +124,31 @@ const CoinsDetails: React.FC<CoinDetailsProps> = ({ id }) => {
               <div className="flex gap-1">
                 <Link href={coinData.links.whitepaper} className="flex gap-1">
                   Go to Link
-                  {/* <Book /> */}
+                  <Book size={16} strokeWidth={0.5} />
                 </Link>
               </div>
             </div>
-            <div>1</div>
+            <div className="gap-2 flex">
+              <span className="text-slate-400 mr-2">Explorers</span>
+              <div className="flex gap-1">
+                <Link
+                  href={coinData.links.blockchain_site[0]}
+                  className="flex gap-1"
+                >
+                  Block Explorer-1
+                  <Telescope size={16} strokeWidth={0.5} />
+                </Link>
+                <Link
+                  href={coinData.links.blockchain_site[1]}
+                  className="flex gap-1"
+                >
+                  Block Explorer-2
+                  <Telescope size={16} strokeWidth={0.5} />
+                </Link>
+              </div>
+            </div>
           </div>
-          <div>1</div>
-          <div>1</div>
         </div>
-        <p>
-          <strong>Symbol:</strong> {coinData.symbol}
-          {coinData.image.small}
-        </p>
       </div>
     </>
   );
